@@ -17,13 +17,12 @@ provider "aws" {
 resource "aws_instance" "sam" {
   ami               = var.ami_id
   availability_zone = var.region
-  instance_type     = var.instance_type
-  vpc-security_group_ids = [
+  instance_type     = var.instance_type[map]
     "  "
   ]
 
   tags = {
-    Name = "HelloSAm"
+    Name = "HelloSAm-${count.index}"
   }
 
 #to create docker
