@@ -36,7 +36,6 @@ docker run -it --name my-container -p 80:80 nginx:alpine
 EOF
 }
 
-
 # create count meta argument instance.
 Vresource "aws_instance" "ec2" {
   count = "var.instance_count"
