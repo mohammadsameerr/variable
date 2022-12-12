@@ -1,3 +1,9 @@
+provider "aws" {
+  region = "ap-south-1a"
+  acces_key = ""
+  secret_key = ""
+} 
+
 resource "aws_instance" "sam" {
   ami               = var.ami_id
   availability_zone = var.region
